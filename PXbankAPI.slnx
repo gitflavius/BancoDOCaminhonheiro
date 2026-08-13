@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/PXBankAPI.API/">
+    <Project Path="PXBankAPI.API/PXbankAPI.API.csproj" />
+  </Folder>
+  <Folder Name="/PXBankAPI.API/Controllers/" />
+  <Folder Name="/PXBankAPI.Application/">
+    <Project Path="PXBankAPI.Application/PXbankAPI.Application.csproj" />
+  </Folder>
+  <Folder Name="/PXBankAPI.Application/DTOs/" />
+  <Folder Name="/PXBankAPI.Application/Services/" />
+  <Folder Name="/PXBankAPI.Domain/">
+    <Project Path="PXBankAPI.Domain/PXbankAPI.Domain.csproj" />
+  </Folder>
+  <Folder Name="/PXBankAPI.Infrastructure/">
+    <Project Path="PXBankAPI.Infrastructure/PXbankAPI.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/PXBankAPI.Infrastructure/Context/" />
+  <Folder Name="/PXBankAPI.Infrastructure/Repositories/" />
+</Solution>

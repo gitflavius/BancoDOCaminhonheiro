@@ -1,0 +1,6 @@
+@PXbankAPI.API_HostAddress = http://localhost:5168
+
+GET {{PXbankAPI.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
