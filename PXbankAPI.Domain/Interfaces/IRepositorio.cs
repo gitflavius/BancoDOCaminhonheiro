@@ -21,6 +21,13 @@ namespace PXbankAPI.Domain.Interfaces
         Task Salvar();
 
     }
+    public interface IContaRepository
+    {
+        Task<Conta?> ObterPorIdAsync(Guid id, CancellationToken ct = default);
+        Task<Conta?> ObterPorDocumentoAsync(string documento, CancellationToken ct = default);
+        Task<bool> ExisteComDocumentoAsync(string documento, CancellationToken ct = default);
+        Task AdicionarAsync(Conta conta, CancellationToken ct = default);
+    }
     public interface IRepositorioMotorista: IRepositorio<Motorista>
     {
         Task<Motorista> ObterPorCpf(string cpf);
@@ -52,4 +59,5 @@ namespace PXbankAPI.Domain.Interfaces
         public string Ip {  get; set; }
 
     }
+    
 }
