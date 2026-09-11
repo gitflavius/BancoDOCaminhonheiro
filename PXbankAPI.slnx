@@ -6,8 +6,12 @@
   <Folder Name="/PXBankAPI.Application/">
     <Project Path="PXBankAPI.Application/PXbankAPI.Application.csproj" />
   </Folder>
-  <Folder Name="/PXBankAPI.Application/DTOs/" />
-  <Folder Name="/PXBankAPI.Application/Services/" />
+  <Folder Name="/PXBankAPI.Application/DTOs/">
+    <File Path="DTO.cs" />
+  </Folder>
+  <Folder Name="/PXBankAPI.Application/Services/">
+    <File Path="Services.cs" />
+  </Folder>
   <Folder Name="/PXBankAPI.Domain/">
     <Project Path="PXBankAPI.Domain/PXbankAPI.Domain.csproj" />
   </Folder>
