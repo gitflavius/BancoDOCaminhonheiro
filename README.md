@@ -123,7 +123,7 @@ Uso `decimal` e não `double` ou `float`. Ponto flutuante binário não represen
 - [ ] Autenticação e autorização por conta
 - [ ] Paginação no extrato
 - [ ] Pipeline de CI rodando os testes a cada push
-- [ ] Cobertura de testes acima de {{70}}%
+- [x] Cobertura de testes acima de {{70}}%
 
 ---
 
