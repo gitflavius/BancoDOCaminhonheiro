@@ -21,7 +21,7 @@ namespace PXbankAPI.Domain.Entities
 
         // Exigido pelo EF Core para materializar do banco.
         private MovimentoConta() { }
-
+ 
         // internal: so a propria Conta cria movimento. Ninguem cria um solto.
         internal MovimentoConta(Guid contaId, TipoMovimento tipo, decimal valor,
                                 string? descricao, int? transacaoId = null)
