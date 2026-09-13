@@ -18,6 +18,12 @@
   <Folder Name="/PXBankAPI.Infrastructure/">
     <Project Path="PXBankAPI.Infrastructure/PXbankAPI.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/PXBankAPI.Infrastructure/Context/" />
+  <Folder Name="/PXBankAPI.Infrastructure/Context/">
+    <File Path="PXbankDbContext.cs" />
+  </Folder>
+  <Folder Name="/PXBankAPI.Infrastructure/Context/Configurations/">
+    <File Path="MotoristaConfiguration.cs" />
+  </Folder>
   <Folder Name="/PXBankAPI.Infrastructure/Repositories/" />
+  <Project Path="PXbankAPI.Tests/PXbankAPI.Tests.csproj" />
 </Solution>
