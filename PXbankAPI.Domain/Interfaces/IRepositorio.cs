@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using PXbankAPI.Domain.Entities;
 using PXbankAPI.Domain.Enums;
-
 
 namespace PXbankAPI.Domain.Interfaces
 {
@@ -19,16 +14,20 @@ namespace PXbankAPI.Domain.Interfaces
         Task Atualizar(T entidade);
         Task Deletar(int id);
         Task Salvar();
-
     }
+
     public interface IContaRepository
     {
-        Task<Conta?> ObterPorIdAsync(Guid id, CancellationToken ct = default);
-        Task<Conta?> ObterPorDocumentoAsync(string documento, CancellationToken ct = default);
-        Task<bool> ExisteComDocumentoAsync(string documento, CancellationToken ct = default);
-        Task AdicionarAsync(Conta conta, CancellationToken ct = default);
+        Task<Conta?> ObterPorId(Guid id);
+        Task<Conta?> ObterPorMotorista(int motoristaId);
+        Task<Conta?> ObterPorDocumento(string documento);
+        Task<bool> ExisteParaMotorista(int motoristaId);
+        Task Adicionar(Conta conta);
+        Task<IReadOnlyList<MovimentoConta>> ObterExtrato(Guid contaId, DateTime inicio, DateTime fim);
+        Task Salvar();
     }
-    public interface IRepositorioMotorista: IRepositorio<Motorista>
+
+    public interface IRepositorioMotorista : IRepositorio<Motorista>
     {
         Task<Motorista> ObterPorCpf(string cpf);
         Task<Motorista> ObterPorEmail(string email);
@@ -42,22 +41,21 @@ namespace PXbankAPI.Domain.Interfaces
         Task<List<Transacao>> ObterPorPeriodo(DateTime dataInicio, DateTime dataFim);
         Task<decimal> ObterTotalPorMotorista(int motoristId);
         Task<decimal> ObterTotalComissaoPendente(int motoristId);
-
     }
+
     public interface IRepositorioAuditoria
     {
         Task RegistrarAcao(string acao, string usuario, string detalhes);
         Task<List<LogAuditoria>> ObterLogs(int ultimosDias = 30);
     }
-    public class LogAuditoria 
-    {
-        public string Id { get; set;  } = Guid.NewGuid().ToString();
-        public string Acao { get; set; }
-        public string Usuario { get; set; }
-        public string Detalhes {  get; set; }
-        public DateTime DataHora { get; set; } = DateTime.UtcNow;
-        public string Ip {  get; set; }
 
+    public class LogAuditoria
+    {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Acao { get; set; } = string.Empty;
+        public string Usuario { get; set; } = string.Empty;
+        public string Detalhes { get; set; } = string.Empty;
+        public DateTime DataHora { get; set; } = DateTime.UtcNow;
+        public string Ip { get; set; } = string.Empty;
     }
-    
 }

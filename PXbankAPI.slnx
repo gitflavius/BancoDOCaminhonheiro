@@ -22,8 +22,16 @@
     <File Path="PXbankDbContext.cs" />
   </Folder>
   <Folder Name="/PXBankAPI.Infrastructure/Context/Configurations/">
+    <File Path="ContaConfiguration.cs" />
     <File Path="MotoristaConfiguration.cs" />
+    <File Path="MovimentoContaConfigurations.cs" />
+    <File Path="TransacaoConfiguration.cs" />
   </Folder>
-  <Folder Name="/PXBankAPI.Infrastructure/Repositories/" />
+  <Folder Name="/PXBankAPI.Infrastructure/Repositories/">
+    <File Path="ContaRepository.cs" />
+    <File Path="RepositorioBase.cs" />
+    <File Path="RepositorioMotorista.cs" />
+    <File Path="RepositorioTransacao.cs" />
+  </Folder>
   <Project Path="PXbankAPI.Tests/PXbankAPI.Tests.csproj" />
 </Solution>
