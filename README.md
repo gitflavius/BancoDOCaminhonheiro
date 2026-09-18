@@ -44,14 +44,11 @@ O ponto central: **Domain não conhece Entity Framework.** Ele declara a interfa
 
 ## Funcionalidades
 
-<!-- AJUSTE: marque [x] só no que já está implementado e funcionando.
-     Deixar itens honestos como [ ] mostra planejamento, não fraqueza. -->
-
 - [ ] Cadastro e consulta de conta
-- [ ] Registro de transação (crédito e débito)
-- [ ] Consulta de saldo
-- [ ] Extrato por período
-- [ ] Validação de saldo insuficiente
+- [x] Registro de transação (crédito e débito)
+- [x] Consulta de saldo
+- [] Extrato por período
+- [x] Validação de saldo insuficiente
 - [ ] Autenticação com JWT
 
 ## Como rodar
@@ -110,7 +107,7 @@ Num CRUD pequeno, projeto único é mais rápido. Separei porque o objetivo aqui
 Chamar o DbContext do controller acopla a regra de negócio ao Entity Framework: qualquer troca de ORM ou de banco vira reescrita. Com a interface no Domain, a Application depende de um contrato, não de uma implementação. Reconheço que em projeto pequeno isso é discutível — repository sobre um ORM que já é um repository é redundância. Mantive pelo valor de aprendizado e pela testabilidade.
 
 **Por que {{SQL Server}} e o que eu mudaria em produção.**
-{{Escolhi X pela facilidade de rodar local}}. Em produção eu usaria {{Y}}, com connection string vindo de variável de ambiente e não do appsettings, migrations aplicadas pelo pipeline e não pela aplicação subindo, e índice na coluna de data das transações — o extrato por período é a consulta mais frequente e sem índice ela degrada rápido conforme a tabela cresce.
+{{Escolhi pela facilidade de rodar local}}. Com connection string vindo de variável de ambiente e não do appsettings, migrations aplicadas pelo pipeline e não pela aplicação subindo, e índice na coluna de data das transações — o extrato por período é a consulta mais frequente e sem índice ela degrada rápido conforme a tabela cresce.
 
 **Sobre consistência de valores monetários.**
 Uso `decimal` e não `double` ou `float`. Ponto flutuante binário não representa valores decimais com exatidão, e em soma de transações o erro acumula. Em contexto financeiro isso não é detalhe.
