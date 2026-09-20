@@ -1,8 +1,14 @@
+
+
+
 # Bank API — Banco do Caminhoneiro
 
 API REST para gestão de contas e transações financeiras voltada a motoristas autônomos e transportadoras, construída em .NET com arquitetura em camadas.
 
 ---
+## Teste API REST
+https://www.youtube.com/watch?v=jqJTyTjhUQE
+
 
 ## Sobre o projeto
 
